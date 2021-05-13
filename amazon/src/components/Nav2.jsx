@@ -8,21 +8,21 @@ import LoginButton from '../SignIn/LoginButton'
 import LogOut from '../SignIn/LogOut'
 import '../SignIn/Log.css'
 import {useAuth0} from "@auth0/auth0-react"
-const Nav = () => {
+const Nav2 = () => {
   const {isAuthenticated} =useAuth0()
   const { isLoading } = useAuth0();
   if (isLoading) return <div>Loading...</div>
   return (
-    !isAuthenticated&&(
+    isAuthenticated&&(
       <div className="nav" >
         <Profile />
       <Link className="amazon" to='/'>amazon</Link>
       <input placeholder="search" className="search"type="text"></input>
-        <LoginButton/>
-        <Link className="cart" to='/MyCartLoggedOut'>Cart </Link>
         <LogOut />
+        <LoginButton/>
+        <Link className="cart" to='/MyCartLoggedIn'>Cart </Link>
     </div>)
   )
 }
 
-export default Nav
+export default Nav2

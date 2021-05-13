@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Auth0Provider } from '@auth0/auth0-react';
-const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
-
+import {Auth0Provider} from '@auth0/auth0-react';
+const domain = "dev-0atudl2q.us.auth0.com"
+// const domain= process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = "WQH6a2wYkbaINk73G3VmCxMFZUwwymzc"
+//For some reason process.env isnt pciking up the above so i put it in manually//
 
 
 

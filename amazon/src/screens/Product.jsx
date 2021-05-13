@@ -1,13 +1,13 @@
 import React from 'react'
 import Products from '../components/Products'
-import { getAllProducts } from '../services/products'
+import { getAllProducts,getOneProduct } from '../services/products'
 import { Link,useParams } from 'react-router-dom';
-import {useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 const Product = () => {
   const [queryProduct, setQueryProduct] = useState([]);
   const [loaded, setIsLoaded] = useState(false);
-  
+ 
 
 
   useEffect(()=>{
@@ -19,6 +19,8 @@ const Product = () => {
     };
     fetchProducts();
   }, [])
+
+ 
   
 
   if (!setIsLoaded) {
@@ -29,12 +31,14 @@ const Product = () => {
     <div>
      
       {queryProduct.map((val) => (
+        <Link to={`/products/${val.id}`}>
         <Products
           picture={val.picture}
           name={val.name}
-          description={val.description}
-          price={val.price}
-        />
+          // description={val.description}
+          // price={val.price}
+          />
+          </Link>
       
       ))}
       
