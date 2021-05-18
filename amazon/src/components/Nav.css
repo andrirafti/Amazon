@@ -31,6 +31,7 @@ top: 0px;
 
 z-index: 198;
 zoom: 1;
+
 }
 
 .amazon{
@@ -39,25 +40,32 @@ zoom: 1;
   text-decoration: none;
   font-size: 25px;
   width:0;
-  height:0
+  height:0;
+  display: flex;
+  flex-wrap: wrap;
 }
 .cart{
- margin-left: auto;
+ display: flex;
+ flex-direction: row;
  color: white;
  position: relative;
  font-size: 20px;
  text-decoration: none;
- padding: 5px;
- margin-right: 10px;
- margin-bottom: 30px;
+ margin-left: 50%;
+ 
+
+}
+.cartbefore{
+  display: flex;
+ flex-direction: row;
+ color: white;
+ position: absolute;
+ font-size: 20px;
+ text-decoration: none;
 
 }
 .search{
-  width:40%;
+  width:30%;
   margin: 0 auto;
-  border-radius: 10%;
-}
-.search:hover{
-background-color: yellow;
-font-size: 15px;
+  border-radius: 10px
 }

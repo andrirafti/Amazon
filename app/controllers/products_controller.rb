@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   def index
     #simple due to no nesting
     @products=Product.all
-    render json:@products
+    render json:@products, include: :reviews, status: :ok
   end
   
   # GET /users/1

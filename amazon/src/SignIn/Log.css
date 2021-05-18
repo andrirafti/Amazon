@@ -64,14 +64,8 @@ width:30%
 
   }
   .image{
-    width:32px;
-    height: 42px;
-    border-radius: 20%;
-    align-items: center;
-justify-content: flex-end;
-position: absolute;
-right:0%;
-top: 0;
+    width:30px
+  
 
 
   }
@@ -80,8 +74,9 @@ top: 0;
   color:red;
 justify-content: flex-end;
 position: absolute;
-right: 3%;
-top: 30px;
+right: 5%;
+top: 40px;
+
 
 
   }

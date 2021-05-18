@@ -4,23 +4,34 @@ import './Nav.css'
 import Profile from '../SignIn/Profile'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 // import "./Nav.css"
-import LoginButton from '../SignIn/LoginButton'
+// import LoginButton from '../SignIn/LoginButton'
 import LogOut from '../SignIn/LogOut'
 import '../SignIn/Log.css'
-import {useAuth0} from "@auth0/auth0-react"
-const Nav2 = () => {
-  const {isAuthenticated} =useAuth0()
-  const { isLoading } = useAuth0();
-  if (isLoading) return <div>Loading...</div>
+// import Product2 from '../screens/Product2'
+
+import { useAuth0 } from "@auth0/auth0-react"
+
+
+
+const Nav2 = (props) => {
+  const { isAuthenticated } = useAuth0()
+  const { countCartItems } = props;
+
+
+
+  
+  
   return (
     isAuthenticated&&(
-      <div className="nav" >
+      <div className="row block center " >
         <Profile />
-      <Link className="amazon" to='/'>amazon</Link>
-      <input placeholder="search" className="search"type="text"></input>
+      <Link  to='/'>RainForest</Link>
+        <Link  to='/MyCartLoggedIn'>Cart:{countCartItems ? (
+            <button className="badge">{countCartItems}</button>
+          ): " "} </Link>
+       
         <LogOut />
-        <LoginButton/>
-        <Link className="cart" to='/MyCartLoggedIn'>Cart </Link>
+        
     </div>)
   )
 }

@@ -14,12 +14,12 @@ const Nav = () => {
   if (isLoading) return <div>Loading...</div>
   return (
     !isAuthenticated&&(
-      <div className="nav" >
+      <div className="row block center " >
         <Profile />
-      <Link className="amazon" to='/'>amazon</Link>
-      <input placeholder="search" className="search"type="text"></input>
+      <Link  to='/'>RainForest</Link>
+      {/* <input placeholder="search" className="search"type="text"></input> */}
+        <Link  to='/MyCartLoggedOut'>Cart </Link>
         <LoginButton/>
-        <Link className="cart" to='/MyCartLoggedOut'>Cart </Link>
         <LogOut />
     </div>)
   )
