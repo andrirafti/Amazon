@@ -16,11 +16,27 @@ const Product2 = (props) => {
   const {onAdd}=props
   
 
-
+  //Sort for price High to low//
+    let LowHigh = queryProduct.map(val=>val).sort((a, b) => a.price - b.price)
+    //Sort for price Low to high//
+  let HighLow = queryProduct.map(val => val).sort((a, b) => b.price - a.price)
+  //
+  function handleSelectChange(e) {
+    e.preventDefault();
+   
+    if (e.target.value == "LowPrice") setQueryProduct(LowHigh);
+    if (e.target.value == "HighPrice") setQueryProduct(HighLow);
+ 
+  }
+  
+  
+  
   useEffect(()=>{
     const fetchProducts=async()=>{
       const products = await getAllProducts();
-      setQueryProduct(products);
+      //setQueryProduct(products);
+      //the bottom STARTS the sort high price to low price.. as opposed to the top which is THE WAY i put it in through postman/// 
+      setQueryProduct(products.map(val => val).sort((a, b) => b.price - a.price));
       setIsLoaded(true)
       
     };
@@ -38,39 +54,24 @@ const Product2 = (props) => {
    
     return < h1 style={{"text-align":"center"}}className="block col-2"> Sorry no results found.. Search Again <div><input  className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}/></div></h1>
   }
- 
-//Sort for price High to low//
-  let LowHigh = queryProduct.map(val=>val).sort((a, b) => a.price - b.price)
-  //Sort for price Low to high//
-  let HighLow = queryProduct.map(val=>val).sort((a, b) => b.price - a.price)
-  
-
-  
   
   
   if (!setIsLoaded) {
-   return <h1>LOADING</h1>
- }
-
+    return <h1>LOADING</h1>
+  }
+  
   return (
     isAuthenticated && (
       
-    <main className="block col-2">
+
+      <main className="block col-2">
         <h2 className="AllProd"> All Products</h2>
-   
-        <select onChange="setQueryProduct(this.options[this.selectedIndex].value)">
-          <option value="HighLow">High To Low</option>
-          <option value="LowHigh" >Low To High</option>
+        <select style={{"border-radius":"10px"}} onChange={handleSelectChange}>
+          <option value="HighPrice">High To Low</option>
+          <option value="LowPrice" >Low To High</option>
           </select>
          
-        {/* <div>
-        <label>Sort:
-        <button onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>High:Low</button>
-          </label>
-          </div>
-        <label>Sort:
-        <button onClick={(e)=>e.preventDefault(setQueryProduct(LowHigh))}>Low:High</button>
-        </label> */}
+    
          
           
     <div className="rowSide">
@@ -107,7 +108,9 @@ const Product2 = (props) => {
         </div>
         
       </main>
+
   ))
 }
+        
 
 export default Product2

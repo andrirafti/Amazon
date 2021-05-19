@@ -8,14 +8,26 @@ import { useAuth0 } from "@auth0/auth0-react"
 const ReviewsAndRating = () => {
   const [reviews, setReviews] = useState([]);
   const { id } = useParams();
-  const {isAuthenticated} =useAuth0()
-
-
+  const { isAuthenticated } = useAuth0()
+  
+  // Sort By Rating Low High//
+  let LowRating = reviews.map((val) => val).sort((a,b)=>a.rating-b.rating)
+  //Sort By Rating High Low 
+  let HighRating = reviews.map((val) => val).sort((a, b) => b.rating - a.rating)
+  // Select Options 
+  function handleSelectChange(e) {
+    e.preventDefault();
+    if (e.target.value == "LowRatings") setReviews(LowRating);
+    if (e.target.value == "HighRatings") setReviews(HighRating);
+  }
+  
+  
   useEffect(()=>{
     const fetchReview=async()=>{
       const rating = await getAllReviews(id);
-      setReviews(rating);
-      
+      // setReviews(rating)
+      //sorts high rating to low rating automatically//
+      setReviews(rating.map(val => val).sort((a, b) => b.rating - a.rating));
       
     };
     fetchReview();
@@ -23,18 +35,11 @@ const ReviewsAndRating = () => {
   
   if ( isAuthenticated && reviews.length <= 0) {
     return <h1>No Reviews/Ratings Found ... Please Leave a review! <Link to={ `/products/${id}/reviews/create`}><button> Leave A Review</button></Link> </h1>
-  
-  
-    
   }
   //Average Rating//
   let AVG = reviews.map((val) => val.rating).reduce((a, b) => a + b) / reviews.length.toFixed(1)
-  console.log(AVG.toFixed(2))
-  // Sort By Rating Low High//
-  let LowRating = reviews.map((val) => val).sort((a,b)=>a.rating-b.rating)
-  //Sort By Rating High Low 
-  let HighRating = reviews.map((val) => val).sort((a,b)=>b.rating-a.rating)
-
+  
+  
   return (
     isAuthenticated &&(
       <div className="block col-2">
@@ -48,13 +53,12 @@ const ReviewsAndRating = () => {
           Average Rating:
            <button className="badge">{AVG.toFixed(1)}</button>
         </h1>
-        <select multiple >
-          <option disabled>Sort By: </option>
-          <option onClick={(e)=>e.preventDefault(setReviews(LowRating))}>Rating: Lowest To Highest</option>
-          <option onClick={(e)=>e.preventDefault(setReviews(HighRating))}>Rating: Highest To Lowest</option>
-
-          </select>
+        
         <hr></hr>
+        <select style={{"border-radius":"10px"}} onChange={handleSelectChange}>
+          <option value="HighRatings">Highest Ratings</option>
+          <option value="LowRatings">Lowest Ratings</option>
+          </select>
      
       {reviews.map((val) => (
         <div className="Ratings">
