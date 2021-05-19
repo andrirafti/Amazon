@@ -57,14 +57,14 @@ const Product2 = (props) => {
       
     <main className="block col-2">
         <h2 className="AllProd"> All Products</h2>
-     <label>Sort By: 
+   
         <select multiple>
           
           <option onClick={(e) => e.preventDefault(setQueryProduct(HighLow))} >High To Low</option>
           <option onClick={(e)=>e.preventDefault(setQueryProduct(LowHigh))} >Low To High</option>
 
           </select>
-          </label>
+         
         {/* <div>
         <label>Sort:
         <button onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>High:Low</button>

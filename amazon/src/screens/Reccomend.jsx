@@ -18,15 +18,16 @@ const Reccomend = () => {
     };
     fetchProducts();
   }, [setInterval])
-  console.log(RandomPic)
+  
 
   return (
   
     <aside className="block col-1">
       Rain Forests Reccomendation of the day!
-      
+       
       <p>{RandomPic.name}</p>
       <img src={RandomPic.picture}/>
+      
     </aside>
     
 
