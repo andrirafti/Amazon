@@ -11,10 +11,8 @@ import Select from "react-select"
 const Product2 = (props) => {
   const [queryProduct, setQueryProduct] = useState([]);
   const [loaded, setIsLoaded] = useState(false);
-  const [showsort,setShowSort]=useState(false)
   const [search,setSearch]=useState("")
   const {isAuthenticated} =useAuth0()
-  const history = useHistory();
   const {onAdd}=props
   
 
@@ -60,19 +58,19 @@ const Product2 = (props) => {
     <main className="block col-2">
         <h2 className="AllProd"> All Products</h2>
      
-        {/* <select  multiple >
+        <select  multiple >
           <option  disabled>Sort By: </option>
           <option onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>Price: High:Low</option>
           <option  onClick={(e) => e.preventDefault(setQueryProduct(LowHigh))}>Price: Low:High</option>
-          </select> */}
-        <div>
+          </select>
+        {/* <div>
         <label>Sort:
         <button onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>High:Low</button>
           </label>
           </div>
         <label>Sort:
         <button onClick={(e)=>e.preventDefault(setQueryProduct(LowHigh))}>Low:High</button>
-        </label>
+        </label> */}
          
           
     <div className="rowSide">
