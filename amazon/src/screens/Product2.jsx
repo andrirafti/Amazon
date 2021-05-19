@@ -62,8 +62,8 @@ const Product2 = (props) => {
      
         <select multiple >
           <option disabled>Sort By: </option>
-          <option  onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>Price: High:Low</option>
-          <option onClick={(e) => e.preventDefault(setQueryProduct(LowHigh))}>Price: Low:High</option>
+          <option  onChange={(e)=>e.preventDefault(setQueryProduct(HighLow))}>Price: High:Low</option>
+          <option onChange={(e) => e.preventDefault(setQueryProduct(LowHigh))}>Price: Low:High</option>
           </select>
         
          
