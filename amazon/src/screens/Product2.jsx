@@ -60,10 +60,10 @@ const Product2 = (props) => {
     <main className="block col-2">
         <h2 className="AllProd"> All Products</h2>
      
-        <select value={setQueryProduct }multiple >
-          <option disabled>Sort By: </option>
-          <option value={HighLow }>Price: High:Low</option>
-          <option value={LowHigh}>Price: Low:High</option>
+        <select style={{"cursor":"pointer"}} multiple >
+          <option style={{"cursor":"pointer"}} disabled>Sort By: </option>
+          <option style={{"cursor":"pointer"}} onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>Price: High:Low</option>
+          <option style={{"cursor":"pointer"}} onClick={(e) => e.preventDefault(setQueryProduct(LowHigh))}>Price: Low:High</option>
           </select>
         
          
