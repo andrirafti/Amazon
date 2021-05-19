@@ -55,11 +55,12 @@ const ReviewsAndRating = () => {
         </h1>
         
         <hr></hr>
+        <label> Reviews: 
         <select style={{"border-radius":"10px"}} onChange={handleSelectChange}>
           <option value="HighRatings">Highest Ratings</option>
           <option value="LowRatings">Lowest Ratings</option>
           </select>
-     
+          </label>
       {reviews.map((val) => (
         <div className="Ratings">
           <hr></hr>

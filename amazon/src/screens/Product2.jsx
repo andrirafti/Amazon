@@ -66,10 +66,12 @@ const Product2 = (props) => {
 
       <main className="block col-2">
         <h2 className="AllProd"> All Products</h2>
+        <label>Price:
         <select style={{"border-radius":"10px"}} onChange={handleSelectChange}>
           <option value="HighPrice">High To Low</option>
           <option value="LowPrice" >Low To High</option>
           </select>
+          </label>
          
     
          
