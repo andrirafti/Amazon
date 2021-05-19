@@ -60,12 +60,17 @@ const Product2 = (props) => {
     <main className="block col-2">
         <h2 className="AllProd"> All Products</h2>
      
-        <select style={{"cursor":"pointer"}} multiple >
-          <option style={{"cursor":"pointer"}} disabled>Sort By: </option>
-          <option style={{"cursor":"pointer"}} onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>Price: High:Low</option>
-          <option style={{"cursor":"pointer"}} onClick={(e) => e.preventDefault(setQueryProduct(LowHigh))}>Price: Low:High</option>
-          </select>
-        
+        {/* <select  multiple >
+          <option  disabled>Sort By: </option>
+          <option onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>Price: High:Low</option>
+          <option  onClick={(e) => e.preventDefault(setQueryProduct(LowHigh))}>Price: Low:High</option>
+          </select> */}
+        <label>Sort:
+        <button onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>High:Low</button>
+        </label>
+        <label>Sort:
+        <button onClick={(e)=>e.preventDefault(setQueryProduct(LowHigh))}>Low:High</button>
+        </label>
          
           
     <div className="rowSide">
