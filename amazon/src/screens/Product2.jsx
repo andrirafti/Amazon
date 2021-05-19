@@ -59,7 +59,7 @@ const Product2 = (props) => {
         <h2 className="AllProd"> All Products</h2>
    
         <select multiple>
-          
+          <option disabled >Sort By:</option>
           <option onClick={(e) => e.preventDefault(setQueryProduct(HighLow))} >High To Low</option>
           <option onClick={(e)=>e.preventDefault(setQueryProduct(LowHigh))} >Low To High</option>
 
