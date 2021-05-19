@@ -59,13 +59,14 @@ const Product2 = (props) => {
       
     <main className="block col-2">
         <h2 className="AllProd"> All Products</h2>
-     
+     <form onSubmit={LowHigh}>
         <select multiple >
           <option disabled>Sort By: </option>
           <option  onClick={(e)=>e.preventDefault(setQueryProduct(HighLow))}>Price: High:Low</option>
           <option onClick={(e) => e.preventDefault(setQueryProduct(LowHigh))}>Price: Low:High</option>
           </select>
-        
+          <button>Submit</button>
+        </form>
          
           
     <div className="rowSide">
