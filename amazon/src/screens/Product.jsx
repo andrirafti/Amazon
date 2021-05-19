@@ -1,7 +1,6 @@
 import React from 'react'
 import Products2 from '../components/Products2'
 import { getAllProducts } from '../services/products'
-import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
 import { Link,useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import {useAuth0} from "@auth0/auth0-react"
