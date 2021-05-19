@@ -58,7 +58,7 @@ const Product2 = (props) => {
     <main className="block col-2">
         <h2 className="AllProd"> All Products</h2>
    
-        <select onChange={(e) => e.preventDefault(setQueryProduct(this.value))}>
+        <select onChange={setQueryProduct(this.options[this.selectedIndex].value)}>
           <option value="HighLow">High To Low</option>
           <option value="LowHigh" >Low To High</option>
           </select>
