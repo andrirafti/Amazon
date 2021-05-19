@@ -21,6 +21,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   
   
+  
   //add for cart
   const onAdd = (val) => {
     const exist = cartItems.find((x) => x.id === val.id);
