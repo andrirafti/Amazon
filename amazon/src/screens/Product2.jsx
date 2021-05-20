@@ -78,8 +78,8 @@ const Product2 = (props) => {
           
     <div className="rowSide">
     
-          <input list="product-list" className="search" placeholder="search" type="text" >
-            <datalist id="product-list" value={search} onChange={(e) => setSearch(e.target.value)}></datalist>
+          <input list="product-list" className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}>
+            <datalist id="product-list"></datalist>
     </input>
     
     
