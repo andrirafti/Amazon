@@ -78,7 +78,9 @@ const Product2 = (props) => {
           
     <div className="rowSide">
     
-    <input  className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}/>
+          <input list="product-list" className="search" placeholder="search" type="text" >
+            <datalist id="product-list" value={search} onChange={(e) => setSearch(e.target.value)}></datalist>
+    </input>
     
     
       {filterCategory.map((val) => (
