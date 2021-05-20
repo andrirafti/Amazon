@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getOneProduct} from '../services/products'
 import { useParams, useHistory,Link } from 'react-router-dom';
 import {useAuth0} from "@auth0/auth0-react"
-
+//Never USED//
 
 const ProductDetail = () => {
   const {isAuthenticated} =useAuth0()

@@ -7,8 +7,8 @@ import Carts from './screens/Carts'
 import {useState,useEffect} from 'react'
 import Product from './screens/Product'
 import Product2 from './screens/Product2'
-import ProductDetail from './screens/ProductDetail';
-import ProductDetail2 from './screens/ProductDetail2';
+// import ProductDetail from './screens/ProductDetail';
+// import ProductDetail2 from './screens/ProductDetail2';
 import Basket from './components/Basket'
 import Reccomend from "./screens/Reccomend"
 import ReviewsAndRating from "./screens/ReviewsAndRating"
@@ -57,12 +57,12 @@ function App() {
       <Route exact path="/products/:id/reviews/create"><MakeAReview/></Route>
       <Route exact path="/products/:id/reviews"><ReviewsAndRating /></Route>
       <Route exact path="/products/:id/reviews/NotSignedIn"><ReviewsNotSignedIn/></Route>
-      <Route exact path='/products/:id'><ProductDetail2 /></Route>
-      <Route  exact path='/products/:id'><ProductDetail /></Route>
+      {/* <Route exact path='/products/:id'><ProductDetail2 /></Route>
+      <Route  exact path='/products/:id'><ProductDetail /></Route> */}
       <Route path="/MyCartLoggedIn"><Basket onAdd={onAdd} cartItems={cartItems} onRemove={onRemove} /></Route>
       <Route path="/MyCartLoggedOut"><Carts /></Route>
       <Route  exact path="/"><Reccomend/><Product2 onAdd={onAdd} /></Route>
-      <Route   path="/"><Product /></Route>
+      <Route   exact path="/"><Product /></Route>
       
     
     </div>

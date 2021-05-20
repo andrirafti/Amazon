@@ -4,10 +4,7 @@ import { useState, useEffect } from 'react'
 
 const Reccomend = () => {
   
-  // let date = new Date();
-  // let time = date.getTime();
-  // let days = Math.floor(time / (86400))
-  // console.log(time)
+ 
    
   const [RandomPic, setRandomPic] = useState([]);
   useEffect(()=>{

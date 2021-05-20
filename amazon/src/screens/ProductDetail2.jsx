@@ -4,7 +4,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react"
 import Reviews from '../components/Reviews';
 
-
+//Never USED//
 
 
 
@@ -15,8 +15,7 @@ const ProductDetail2 = () => {
   const [product, setProduct] = useState([])
   const { id } = useParams();
   const history = useHistory()
-  // const emptyarr = []
-  // emptyarr.push(product.price)
+
   
  // Grabs The Specefic picture// 
   useEffect(()=>{
