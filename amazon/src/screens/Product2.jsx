@@ -80,7 +80,7 @@ const Product2 = (props) => {
     
     <input  className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}/>
     
-    <datalist>
+    
       {filterCategory.map((val) => (
        <div>
         <Products
@@ -105,7 +105,7 @@ const Product2 = (props) => {
       )
       
             )}
-            </datalist>
+            
             
            
           

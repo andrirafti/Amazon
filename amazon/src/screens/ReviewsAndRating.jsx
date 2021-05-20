@@ -41,7 +41,9 @@ const ReviewsAndRating = () => {
   
   
   return (
-    isAuthenticated &&(
+    isAuthenticated && (
+      <fieldset>
+        <legend>Reviews</legend>
       <div className="block col-2">
         
       <Link to={`/`}><button className="reviewBTN">Return</button></Link>
@@ -77,7 +79,8 @@ const ReviewsAndRating = () => {
         <hr></hr>
 
       
-      </div>
+        </div>
+        </fieldset>
     )
   )
 }
