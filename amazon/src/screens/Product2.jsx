@@ -77,7 +77,9 @@ const Product2 = (props) => {
          
           
     <div className="rowSide">
+      <datalist>
     <input  className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}/>
+    </datalist>
 
       {filterCategory.map((val) => (
        <div>
@@ -91,6 +93,7 @@ const Product2 = (props) => {
           // description={val.description}
           // price={val.price}
           />
+          
           <div >
           <button className="reviewBTN">
             <Link className="ReviewC" to={`/products/${val.id}/reviews`}>Customer Reviews </Link>
