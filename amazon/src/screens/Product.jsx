@@ -30,7 +30,7 @@ const Product = () => {
 // Loading Page// 
   if (queryProduct.length<1) {
     
-    return < h1 style={{"text-align":"center","background-color":'black',"color":"white"}}> Loading... Please wait </ h1>
+    return < h1 style={{"text-align":"center","background-color":'black',"color":"white"}}className="block col-2"> Loading... Please wait </ h1>
   }
 
  return (
