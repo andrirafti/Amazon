@@ -64,7 +64,7 @@ function App() {
       <Route path="/MyCartLoggedIn"><Basket onAdd={onAdd} cartItems={cartItems} onRemove={onRemove} /></Route>
       <Route path="/MyCartLoggedOut"><Carts /></Route>
       <Route  exact path="/"><Reccomend/><Product2 onAdd={onAdd} /></Route>
-      <Route   path="/"><Reccomend/><Product /></Route>
+      <Route   path="/"><Product /></Route>
       
     
     </div>
