@@ -28,10 +28,10 @@ const Product = () => {
   
   
 
-  if (!setIsLoaded) {
-    <div><h1>LOADING</h1>
-    </div>
- }
+  if (queryProduct.length<1) {
+    
+    return < h1 style={{"text-align":"center"}}className="block col-2"> Loading... Please wait </ h1>
+  }
 
  return (
    !isAuthenticated && (
