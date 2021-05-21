@@ -49,7 +49,7 @@ const Product2 = (props) => {
     
   
   })
-  if (!setIsLoaded) {
+  if (!setIsLoaded &&filterCategory.length<1) {
     return <h1>LOADING . . .</h1>
   }
   //search filter if there is nothing found!//
