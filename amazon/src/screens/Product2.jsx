@@ -24,8 +24,8 @@ const Product2 = (props) => {
   function handleSelectChange(e) {
     e.preventDefault();
    
-    if (e.target.value == "LowPrice") setQueryProduct(LowHigh);
-    if (e.target.value == "HighPrice") setQueryProduct(HighLow);
+    if (e.target.value == "LowPrice") setQueryProduct2(LowHigh);
+    if (e.target.value == "HighPrice") setQueryProduct2(HighLow);
  
   }
   
