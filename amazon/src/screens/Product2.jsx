@@ -4,7 +4,7 @@ import { getAllProducts } from '../services/products'
 import { Link,useParams,useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
-import Select from "react-select"
+
 
 
 
@@ -49,6 +49,9 @@ const Product2 = (props) => {
     
   
   })
+  if (!setIsLoaded) {
+    return <h1>LOADING . . .</h1>
+  }
   //search filter if there is nothing found!//
   if (filterCategory.length <1) {
    
@@ -56,9 +59,6 @@ const Product2 = (props) => {
   }
   
   
-  if (!setIsLoaded) {
-    return <h1>LOADING</h1>
-  }
   
   return (
     isAuthenticated && (

@@ -2,7 +2,7 @@ import React from 'react';
 import {useAuth0} from "@auth0/auth0-react"
 
 export default function Products(props) {
-  const {name, picture,price,description,onAdd } = props;
+  const {name, picture,price,description } = props;
   
   const {isAuthenticated} =useAuth0()
 
