@@ -14,7 +14,7 @@ const Reccomend = () => {
       return products
     };
     fetchProducts();
-  }, [setInterval])
+  }, [])
   
 
   return (

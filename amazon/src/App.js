@@ -14,12 +14,13 @@ import Reccomend from "./screens/Reccomend"
 import ReviewsAndRating from "./screens/ReviewsAndRating"
 import ReviewsNotSignedIn from "./screens/ReviewsNotSignedIn"
 import MakeAReview from './screens/MakeAReview';
+import { useAuth0 } from "@auth0/auth0-react"
 
 
 function App() {
   //Cart Items//
   const [cartItems, setCartItems] = useState([]);
-  
+  const {isAuthenticated} =useAuth0()
   
   
   //add for cart
@@ -62,8 +63,8 @@ function App() {
       <Route  exact path='/products/:id'><ProductDetail /></Route> */}
       <Route path="/MyCartLoggedIn"><Basket onAdd={onAdd} cartItems={cartItems} onRemove={onRemove} /></Route>
       <Route path="/MyCartLoggedOut"><Carts /></Route>
-      {/* <Route  exact path="/"><Reccomend/><Product2 onAdd={onAdd} /></Route> */}
-      <Route   exact path="/"><Reccomend/><Product /><Product2 onAdd={onAdd} /></Route>
+      <Route  exact path="/"><Reccomend/><Product2 onAdd={onAdd} /></Route>
+      <Route   path="/"><Reccomend/><Product /></Route>
       
     
     </div>
