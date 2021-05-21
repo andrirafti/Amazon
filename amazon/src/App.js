@@ -48,6 +48,7 @@ function App() {
   // the way nav is getting 1,2,3, is because of the cartItems use State length./ 
   return (
     <div className="row">
+      <Switch>
      
       <Nav />
       
@@ -64,7 +65,7 @@ function App() {
       {/* <Route  exact path="/"><Reccomend/><Product2 onAdd={onAdd} /></Route> */}
       <Route   exact path="/"><Reccomend/><Product /><Product2 onAdd={onAdd} /></Route>
       
-    
+    </Switch>
     </div>
   );
 }
