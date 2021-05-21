@@ -9,7 +9,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 
 
 const Product2 = (props) => {
-  const [queryProduct, setQueryProduct] = useState([]);
+  const [queryProduct2, setQueryProduct2] = useState([]);
   const [loaded, setIsLoaded] = useState(false);
   const [search,setSearch]=useState("")
   const {isAuthenticated} =useAuth0()
@@ -17,9 +17,9 @@ const Product2 = (props) => {
   
 
   //Sort for price High to low//
-    let LowHigh = queryProduct.map(val=>val).sort((a, b) => a.price - b.price)
+    let LowHigh = queryProduct2.map(val=>val).sort((a, b) => a.price - b.price)
     //Sort for price Low to high//
-  let HighLow = queryProduct.map(val => val).sort((a, b) => b.price - a.price)
+  let HighLow = queryProduct2.map(val => val).sort((a, b) => b.price - a.price)
   //
   function handleSelectChange(e) {
     e.preventDefault();
@@ -36,14 +36,14 @@ const Product2 = (props) => {
       const products = await getAllProducts();
       //setQueryProduct(products);
       //the bottom STARTS the sort high price to low price.. as opposed to the top which is THE WAY i put it in through postman/// 
-      setQueryProduct(products.map(val => val).sort((a, b) => b.price - a.price));
+      setQueryProduct2(products.map(val => val).sort((a, b) => b.price - a.price));
       setIsLoaded(true)
       
     };
     fetchProducts();
   }, [])
 //search filter//
-  const filterCategory = queryProduct.filter((val) => {
+  const filterCategory = queryProduct2.filter((val) => {
     
     return  val.name.toLowerCase().includes(search.toLowerCase()) 
     
@@ -52,7 +52,7 @@ const Product2 = (props) => {
   //search filter if there is nothing found!//
   if (!filterCategory.length) {
     
-    return < h1 style={{"text-align":"center"}}className="block col-2"> Sorry no results found.. Search Again / Potentially loading...<div><input  className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}/></div></h1>
+    return < h1 style={{"text-align":"center"}}className="block col-2"> Sorry no results found.. Search Again <div><input  className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}/></div></h1>
   }
   
   if (!setIsLoaded) {

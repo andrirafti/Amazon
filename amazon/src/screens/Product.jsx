@@ -29,7 +29,8 @@ const Product = () => {
   
 
   if (!setIsLoaded) {
-   return <h1>LOADING</h1>
+    <div><h1>LOADING</h1>
+    </div>
  }
 
  return (
