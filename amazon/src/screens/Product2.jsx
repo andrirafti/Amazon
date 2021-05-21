@@ -50,10 +50,10 @@ const Product2 = (props) => {
   
   })
   //search filter if there is nothing found!//
-  if (filterCategory.length <1) {
+  // if (filterCategory.length <1) {
     
-    return < h1 style={{"text-align":"center"}}className="block col-2"> Sorry no results found.. Search Again <div><input  className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}/></div></h1>
-  }
+  //   return < h1 style={{"text-align":"center"}}className="block col-2"> Sorry no results found.. Search Again <div><input  className="search" placeholder="search" type="text" value={search} onChange={(e) => setSearch(e.target.value)}/></div></h1>
+  // }
   
   if (!setIsLoaded &&filterCategory.length<1) {
     return <h1>LOADING . . .</h1>
