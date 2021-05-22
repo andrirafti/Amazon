@@ -27,7 +27,8 @@ const Product2 = (props) => {
     if (e.target.value == "LowPrice") setQueryProduct2(LowHigh);
     if (e.target.value == "HighPrice") setQueryProduct2(HighLow);
     if (e.target.value == "Ferrari") alert("Wow its a ferrari!");
-    if(e.target.value=="Porsche") alert("Wow its a Porsche!")
+    if (e.target.value == "Porsche") alert("Wow its a Porsche!");
+    if(e.target.value=="Mustang") alert("Wow its a Mustang!")
  
   }
   
@@ -77,6 +78,7 @@ const Product2 = (props) => {
           <option value="LowPrice" >Low To High</option>
           </select>
           <div>
+            <label>Search for a car: AutoFill Practice</label>
             <input list="car-list" type="text" onChange={handleSelectChange}/>
               <datalist id="car-list">
                 <option value="Ferrari"/>
