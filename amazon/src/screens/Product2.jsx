@@ -75,13 +75,13 @@ const Product2 = (props) => {
           <option value="LowPrice" >Low To High</option>
           </select>
           <div>
-            <input list="car-list" type="text">
+            <input list="car-list" type="text" onChange={handleSelectChange}/>
               <datalist id="car-list">
                 <option value="Ferrari"/>
                   <option value="Mustang"/>
                     <option value="Porsche"/>
               </datalist>
-            </input>
+         
           </div>
           </label>
          
