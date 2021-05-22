@@ -22,6 +22,8 @@ const Product2 = (props) => {
   let HighLow = queryProduct2.map(val => val).sort((a, b) => b.price - a.price)
   //Search For Ferrari
   let Ferrari=queryProduct2.map(val=>val.name.includes("Ferrari"))
+  console.log(Ferrari)
+  console.log(queryProduct2)
   // handle select for our select options//
   function handleSelectChange(e) {
     e.preventDefault();
