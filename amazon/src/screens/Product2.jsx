@@ -62,6 +62,13 @@ const Product2 = (props) => {
 
   }
   
+            <input list="car-list" type="text">
+              <datalist id="car-list">
+                <option value="Ferrari"/>
+                  <option value="Mustang"/>
+                    <option value="Porsche"/>
+              </datalist>
+            </input>
   
   return (
     isAuthenticated && (
@@ -75,13 +82,6 @@ const Product2 = (props) => {
           <option value="LowPrice" >Low To High</option>
           </select>
           <div>
-            <input list="car-list" type="text">
-              <datalist id="car-list">
-                <option value="Ferrari"/>
-                  <option value="Mustang"/>
-                    <option value="Porsche"/>
-              </datalist>
-            </input>
           </div>
           </label>
          
