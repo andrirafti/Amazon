@@ -26,6 +26,8 @@ const Product2 = (props) => {
    
     if (e.target.value == "LowPrice") setQueryProduct2(LowHigh);
     if (e.target.value == "HighPrice") setQueryProduct2(HighLow);
+    if (e.target.value = "Ferrari") alert("Wow its a ferrari!");
+    if(e.target.value="Ferrari") alert("Wow its a Porsche!")
  
   }
   
