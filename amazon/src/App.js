@@ -61,8 +61,8 @@ function App() {
       <Route exact path="/products/:id/reviews/NotSignedIn"><ReviewsNotSignedIn/></Route>
       {/* <Route exact path='/products/:id'><ProductDetail2 /></Route>
       <Route  exact path='/products/:id'><ProductDetail /></Route> */}
-      <Route path="/MyCartLoggedIn"><Basket onAdd={onAdd} cartItems={cartItems} onRemove={onRemove} /></Route>
-      <Route path="/MyCartLoggedOut"><Carts /></Route>
+      <Route exact path="/MyCartLoggedIn"><Basket onAdd={onAdd} cartItems={cartItems} onRemove={onRemove} /></Route>
+      <Route exact path="/MyCartLoggedOut"><Carts /></Route>
       <Route  exact path="/"><Reccomend/><Product2 onAdd={onAdd} /></Route>
       <Route   exact path="/"><Product /></Route>
       
