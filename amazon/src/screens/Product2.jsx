@@ -94,9 +94,9 @@ console.log(queryProduct2)
                   <option value="Mustang"/>
               <option value="Porsche" />
               </datalist>
+         <button onClick={(e)=>e.preventDefault(queryProduct2.map(val=>val))}>Search A New Car</button>
           </div>
           </label>
-         {/* <button onClick={(e)=>e.preventDefault(history.push("/"))}>Search A New Car</button> */}
          
     
          
