@@ -37,7 +37,10 @@ console.log(queryProduct2)
     if (e.target.value == "Ferrari") setQueryProduct2(Ferrari);
     if (e.target.value == "Porsche") setQueryProduct2(Porsche);
     if (e.target.value == "Mustang") setQueryProduct2(Mustang);
-   
+    
+    if (input.length <=0) {
+      alert("Testing")
+    }
   }
   
   
@@ -92,10 +95,10 @@ console.log(queryProduct2)
                 <option value="Ferrari"/>
                   <option value="Mustang"/>
               <option value="Porsche" />
+              
               </datalist>
           </div>
           </label>
-         <button onClick={window.location.reload()}>Search A New Car</button>
          
     
          
