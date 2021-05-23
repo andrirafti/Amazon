@@ -76,7 +76,7 @@ const Product = () => {
         />
         
         <button className="reviewBTN">
-            <Link to={`/products/${val.id}/reviews/NotSignedIn`}> View Reviews</Link>
+            <Link style={{"color":"black"}} to={`/products/${val.id}/reviews/NotSignedIn`}> View Reviews</Link>
             </button>
     
               </div>
