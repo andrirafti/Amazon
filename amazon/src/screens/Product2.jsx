@@ -25,7 +25,7 @@ const Product2 = (props) => {
   let Ferrari = queryProduct2.map(val => val).filter((val) => val.name.includes("Ferrari"));
   let Porsche = queryProduct2.map(val => val).filter((val) => val.name.includes("Porsche"));
   let Mustang = queryProduct2.map(val => val).filter((val) => val.name.includes("Mustang"));
-
+  let NewSearch = queryProduct2.map(val => val)
 console.log(queryProduct2)
   
   // handle select for our select options//
@@ -40,6 +40,8 @@ console.log(queryProduct2)
     if (e.target.value.length <= 0) {
       setQueryProduct2(queryProduct2)
     }
+    if (e.target.value == "New Search") setQueryProduct2(NewSearch);
+
 
    
   }
