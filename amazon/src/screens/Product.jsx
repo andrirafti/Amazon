@@ -27,14 +27,14 @@ const Product = () => {
       
     };
     fetchProducts();
-  }, [AllProducts])
+  }, [])
   
   function handleSelectChange(e) {
     e.preventDefault();
     if (e.target.value == "Ferrari") setQueryProduct(Ferrari);
     if (e.target.value == "Porsche") setQueryProduct(Porsche);
     if (e.target.value == "Mustang") setQueryProduct(Mustang);
-    if (e.target.value.length<=0) setQueryProduct(AllProducts)
+    if (e.target.value.length<=0) setQueryProduct((e)=>e.preventDefault(window.location.reload()))
   }
  
   
