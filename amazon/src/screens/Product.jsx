@@ -17,9 +17,9 @@ const Product = () => {
   // handle select for our select options//
   function handleSelectChange(e) {
     e.preventDefault();
-    if (e.target.value == "Ferrari") setQueryProduct2(Ferrari);
-    if (e.target.value == "Porsche") setQueryProduct2(Porsche);
-    if (e.target.value == "Mustang") setQueryProduct2(Mustang);
+    if (e.target.value == "Ferrari") setQueryProduct(Ferrari);
+    if (e.target.value == "Porsche") setQueryProduct(Porsche);
+    if (e.target.value == "Mustang") setQueryProduct(Mustang);
   }
   
  
