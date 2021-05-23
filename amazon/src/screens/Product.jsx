@@ -61,7 +61,7 @@ const Product = () => {
              
               
          </datalist>
-         <button onClick={(e)=>e.preventDefault(window.location.reload())}> Search Again</button>
+         <button className='reviewBTN' onClick={(e)=>e.preventDefault(window.location.reload())}> Return</button>
           </div>
         <div className="row">
             
@@ -75,7 +75,7 @@ const Product = () => {
           price={val.price}
         />
         
-        <button className="Review">
+        <button className="reviewBTN">
             <Link to={`/products/${val.id}/reviews/NotSignedIn`}> View Reviews</Link>
             </button>
     
