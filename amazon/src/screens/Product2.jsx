@@ -20,8 +20,8 @@ const Product2 = (props) => {
     let LowHigh = queryProduct2.map(val=>val).sort((a, b) => a.price - b.price)
     //Sort for price Low to high//
   let HighLow = queryProduct2.map(val => val).sort((a, b) => b.price - a.price)
-  //Search For Ferrari
-  let Ferrari=queryProduct2.map(val=>val).sort((a,b)=>a.name=="Ferrari 458 Italia"-b.name=="Ferrari 458 Italia")
+  //Search For Ferrari (USE FILTER METHOD NOT SORT)
+  let Ferrari = queryProduct2.map(val => val).filter((val) => val.name=="Ferrari 458 Italia")
   console.log(Ferrari)
   console.log(queryProduct2)
   // handle select for our select options//
