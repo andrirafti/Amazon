@@ -9,6 +9,18 @@ const Product = () => {
   const [queryProduct, setQueryProduct] = useState([]);
   const [loaded, setIsLoaded] = useState(false);
   const { isAuthenticated } = useAuth0()
+  //Search For CARS (USE FILTER METHOD)
+  let Ferrari = queryProduct.map(val => val).filter((val) => val.name.includes("Ferrari"));
+  let Porsche = queryProduct.map(val => val).filter((val) => val.name.includes("Porsche"));
+  let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
+
+  // handle select for our select options//
+  function handleSelectChange(e) {
+    e.preventDefault();
+    if (e.target.value == "Ferrari") setQueryProduct2(Ferrari);
+    if (e.target.value == "Porsche") setQueryProduct2(Porsche);
+    if (e.target.value == "Mustang") setQueryProduct2(Mustang);
+  }
   
  
 
@@ -37,7 +49,19 @@ const Product = () => {
    !isAuthenticated && (
      
      <main className="block col-2">
-      <h2 className="AllProd"> All Products</h2>
+       <h2 className="AllProd"> All Products</h2>
+       <div>
+            <label>Search Our Exotic Cars! </label>
+            <input list="car-list" type="text" onChange={handleSelectChange}/>
+              <datalist id="car-list">
+                <option value="Ferrari"/>
+                  <option value="Mustang"/>
+              <option value="Porsche" />
+             
+              
+         </datalist>
+         <button onClick={(e)=>e.preventDefault(window.location.reload())}> New Car Search</button>
+          </div>
         <div className="row">
             
          
