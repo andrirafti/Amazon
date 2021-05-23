@@ -34,7 +34,7 @@ const Product = () => {
     if (e.target.value == "Ferrari") setQueryProduct(Ferrari);
     if (e.target.value == "Porsche") setQueryProduct(Porsche);
     if (e.target.value == "Mustang") setQueryProduct(Mustang);
-    if (e.target.value.length<=0) setQueryProduct((e)=>e.preventDefault(window.location.reload()))
+    if (e.target.value.length <= 0) fetchProducts();
   }
  
   
