@@ -20,6 +20,7 @@ const Product = () => {
     if (e.target.value == "Ferrari") setQueryProduct(Ferrari);
     if (e.target.value == "Porsche") setQueryProduct(Porsche);
     if (e.target.value == "Mustang") setQueryProduct(Mustang);
+    if (e.target.value.length<=0) setQueryProduct(products)
   }
   
  
@@ -60,7 +61,7 @@ const Product = () => {
              
               
          </datalist>
-         <button onClick={(e)=>e.preventDefault(window.location.reload())}> New Car Search</button>
+         <button onClick={(e)=>e.preventDefault(window.location.reload())}> Search Again</button>
           </div>
         <div className="row">
             
