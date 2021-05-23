@@ -93,9 +93,9 @@ console.log(queryProduct2)
                   <option value="Mustang"/>
                     <option value="Porsche"/>
               </datalist>
-         <button onClick={window.location.reload()}>Refresh</button>
           </div>
           </label>
+         <button onClick={(e)=>e.preventDefault(window.location.reload())}>Search A New Car</button>
          
     
          
