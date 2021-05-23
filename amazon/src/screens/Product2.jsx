@@ -38,7 +38,7 @@ console.log(queryProduct2)
     if (e.target.value == "Porsche") setQueryProduct2(Porsche);
     if (e.target.value == "Mustang") setQueryProduct2(Mustang);
     if (e.target.value.length <= 0) {
-      alert("Testing ")
+      setQueryProduct2(filterCategory)
     }
 
    
