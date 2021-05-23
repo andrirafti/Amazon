@@ -36,7 +36,7 @@ console.log(queryProduct2)
     if (e.target.value == "Ferrari") setQueryProduct2(Ferrari);
     if (e.target.value == "Porsche") setQueryProduct2(Porsche);
     if (e.target.value == "Mustang") setQueryProduct2(Mustang);
-    else setQueryProduct2(HighLow)
+    else if (e.target.value=="") setQueryProduct2(HighLow)
     
  
   }
