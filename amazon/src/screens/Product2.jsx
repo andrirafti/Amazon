@@ -13,6 +13,7 @@ const Product2 = (props) => {
   const [loaded, setIsLoaded] = useState(false);
   const [search,setSearch]=useState("")
   const {isAuthenticated} =useAuth0()
+  const history=useHistory()
   const {onAdd}=props
   
 
@@ -96,7 +97,7 @@ console.log(queryProduct2)
               </datalist>
           </div>
           </label>
-         <button onClick={(e)=>e.preventDefault(window.location.reload())}>Search A New Car</button>
+         <button onClick={(e)=>e.preventDefault(history.push("/"))}>Search A New Car</button>
          
     
          
