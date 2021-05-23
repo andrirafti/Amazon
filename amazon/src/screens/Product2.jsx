@@ -20,10 +20,13 @@ const Product2 = (props) => {
     let LowHigh = queryProduct2.map(val=>val).sort((a, b) => a.price - b.price)
     //Sort for price Low to high//
   let HighLow = queryProduct2.map(val => val).sort((a, b) => b.price - a.price)
-  //Search For Ferrari (USE FILTER METHOD NOT SORT)
-  let Ferrari = queryProduct2.map(val => val).filter((val) => val.name=="Ferrari 458 Italia")
-  console.log(Ferrari)
-  console.log(queryProduct2)
+  //Search For CARS (USE FILTER METHOD)
+  let Ferrari = queryProduct2.map(val => val).filter((val) => val.name.includes("Ferrari"));
+  let Porsche = queryProduct2.map(val => val).filter((val) => val.name.includes("Porsche"));
+  let Mustang = queryProduct2.map(val => val).filter((val) => val.name.includes("Mustang"));
+
+
+  
   // handle select for our select options//
   function handleSelectChange(e) {
     e.preventDefault();
@@ -31,8 +34,9 @@ const Product2 = (props) => {
     if (e.target.value == "LowPrice") setQueryProduct2(LowHigh);
     if (e.target.value == "HighPrice") setQueryProduct2(HighLow);
     if (e.target.value == "Ferrari") setQueryProduct2(Ferrari);
-    if (e.target.value == "Porsche") alert("Wow its a Porsche!");
-    if(e.target.value=="Mustang") alert("Wow its a Mustang!")
+    if (e.target.value == "Porsche") setQueryProduct2(Porsche);
+    if (e.target.value == "Mustang") setQueryProduct2(Mustang);
+    if (e.target.value=="") setQueryProduct2(HighLow)
  
   }
   
