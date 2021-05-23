@@ -25,7 +25,7 @@ const Product2 = (props) => {
   let Porsche = queryProduct2.map(val => val).filter((val) => val.name.includes("Porsche"));
   let Mustang = queryProduct2.map(val => val).filter((val) => val.name.includes("Mustang"));
 
-
+console.log(queryProduct2)
   
   // handle select for our select options//
   function handleSelectChange(e) {
@@ -36,7 +36,7 @@ const Product2 = (props) => {
     if (e.target.value == "Ferrari") setQueryProduct2(Ferrari);
     if (e.target.value == "Porsche") setQueryProduct2(Porsche);
     if (e.target.value == "Mustang") setQueryProduct2(Mustang);
-    if (e.target.value=="") setQueryProduct2(HighLow)
+    // if (e.target.value=="") setQueryProduct2(HighLow)
  
   }
   
