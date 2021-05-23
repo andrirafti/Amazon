@@ -37,9 +37,7 @@ console.log(queryProduct2)
     if (e.target.value == "Ferrari") setQueryProduct2(Ferrari);
     if (e.target.value == "Porsche") setQueryProduct2(Porsche);
     if (e.target.value == "Mustang") setQueryProduct2(Mustang);
-    if (e.target.value.length<=0) setQueryProduct2(HighLow)
-    
- 
+    if (e.target.value =="New Search") setQueryProduct2(HighLow)
   }
   
   
@@ -91,6 +89,7 @@ console.log(queryProduct2)
             <label>Search Our Exotic Cars! </label>
             <input list="car-list" type="text" onChange={handleSelectChange}/>
               <datalist id="car-list">
+              <option value="New Search" />
                 <option value="Ferrari"/>
                   <option value="Mustang"/>
               <option value="Porsche" />
