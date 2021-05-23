@@ -13,19 +13,12 @@ const Product = () => {
   let Ferrari = queryProduct.map(val => val).filter((val) => val.name.includes("Ferrari"));
   let Porsche = queryProduct.map(val => val).filter((val) => val.name.includes("Porsche"));
   let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
-
-  // handle select for our select options//
-  function handleSelectChange(e) {
-    e.preventDefault();
-    if (e.target.value == "Ferrari") setQueryProduct(Ferrari);
-    if (e.target.value == "Porsche") setQueryProduct(Porsche);
-    if (e.target.value == "Mustang") setQueryProduct(Mustang);
-    if (e.target.value.length<=0) setQueryProduct(products)
-  }
+  let AllProducts =queryProduct.map(val=>val)
   
- 
-
-
+  
+  
+  
+  
   useEffect(()=>{
     const fetchProducts=async()=>{
       const products = await getAllProducts();
@@ -35,7 +28,14 @@ const Product = () => {
     };
     fetchProducts();
   }, [])
-
+  
+  function handleSelectChange(e) {
+    e.preventDefault();
+    if (e.target.value == "Ferrari") setQueryProduct(Ferrari);
+    if (e.target.value == "Porsche") setQueryProduct(Porsche);
+    if (e.target.value == "Mustang") setQueryProduct(Mustang);
+    if (e.target.value.length<=0) setQueryProduct(AllProducts)
+  }
  
   
   
@@ -73,8 +73,6 @@ const Product = () => {
           picture={val.picture}
           name={val.name}
           price={val.price}
-          // description={val.description}
-          // price={val.price}
         />
         
         <button className="Review">
