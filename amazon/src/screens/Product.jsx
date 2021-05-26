@@ -10,7 +10,7 @@ const Product = () => {
   const [loaded, setIsLoaded] = useState(false);
   const { isAuthenticated } = useAuth0()
   //Search For CARS (USE FILTER METHOD)
-  let Cars = queryProduct.map(val => val).filter((val) => val.price>30000);
+  let Cars = queryProduct.map(val => val).filter((val) => val.price>40000);
   // let Porsche = queryProduct.map(val => val).filter((val) => val.name.includes("Porsche"));
   // let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
   let Watches = queryProduct.map(val => val).filter(val => val.name.includes("Rolex"))
