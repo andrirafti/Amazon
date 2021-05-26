@@ -37,7 +37,7 @@ const Product = () => {
   
   function handleSelectChange(e) {
     e.preventDefault();
-    if (e.target.value == "Cars") setQueryProduct(Cars);
+    if (e.target.value == "Cars") setQueryProduct(Cars)
     // if (e.target.value == "Porsche") setQueryProduct(Porsche);
     // if (e.target.value == "Mustang") setQueryProduct(Mustang);
     if (e.target.value == "Watches") setQueryProduct(Watches)
@@ -60,7 +60,7 @@ const Product = () => {
      <main className="block col-2">
        <h2 className="AllProd"> All Products</h2>
        <div>
-            <label>Search Our Exotic Products </label>
+            <label>Sort By: </label>
             <input list="car-list" type="text" onChange={handleSelectChange}/>
               <datalist id="car-list">
                 <option value="Cars"/>

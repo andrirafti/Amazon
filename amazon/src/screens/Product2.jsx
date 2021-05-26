@@ -22,7 +22,12 @@ const Product2 = (props) => {
     //Sort for price Low to high//
   let HighLow = queryProduct2.map(val => val).sort((a, b) => b.price - a.price)
  
-
+// Sort Category
+let Cars = queryProduct2.map(val => val).filter((val) => val.price>40000);
+// let Porsche = queryProduct.map(val => val).filter((val) => val.name.includes("Porsche"));
+// let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
+let Watches = queryProduct2.map(val => val).filter(val => val.name.includes("Rolex"))
+let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
   
   // handle select for our select options//
   function handleSelectChange(e) {
@@ -30,6 +35,12 @@ const Product2 = (props) => {
    
     if (e.target.value == "LowPrice") setQueryProduct2(LowHigh);
     if (e.target.value == "HighPrice") setQueryProduct2(HighLow);
+    if (e.target.value == "Cars") setQueryProduct2(Cars)
+    // if (e.target.value == "Porsche") setQueryProduct(Porsche);
+    // if (e.target.value == "Mustang") setQueryProduct(Mustang);
+    if (e.target.value == "Watches") setQueryProduct2(Watches)
+    if(e.target.value== "Electronics") setQueryProduct2(Electronics)
+    if (e.target.value.length<=0) setQueryProduct2((e)=>e.preventDefault(window.location.reload()))
     
   }
   
@@ -78,7 +89,17 @@ const Product2 = (props) => {
           <option value="HighPrice">High To Low</option>
           <option value="LowPrice" >Low To High</option>
           </select>
-          </label>
+        </label>
+<label>Sort By:</label>
+        <input list="car-list" type="text" onChange={handleSelectChange}/>
+              <datalist id="car-list">
+                <option value="Cars"/>
+                  
+           <option value="Watches" />
+           <option value="Electronics"/>
+             
+              
+         </datalist>
          
     
          
