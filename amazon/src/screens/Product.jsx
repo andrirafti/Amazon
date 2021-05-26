@@ -10,10 +10,16 @@ const Product = () => {
   const [loaded, setIsLoaded] = useState(false);
   const { isAuthenticated } = useAuth0()
   //Search For CARS (USE FILTER METHOD)
-  let Ferrari = queryProduct.map(val => val).filter((val) => val.name.includes("Ferrari"));
-  let Porsche = queryProduct.map(val => val).filter((val) => val.name.includes("Porsche"));
-  let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
-  let AllProducts =queryProduct.map(val=>val)
+  let Cars = queryProduct.map(val => val).filter((val) => val.price>30000);
+  // let Porsche = queryProduct.map(val => val).filter((val) => val.name.includes("Porsche"));
+  // let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
+  let Watches = queryProduct.map(val => val).filter(val => val.name.includes("Rolex"))
+  let Electronics = queryProduct.map(val => val).filter(val=>val.price<500)
+
+  
+
+  
+ 
   
   
   
@@ -31,9 +37,11 @@ const Product = () => {
   
   function handleSelectChange(e) {
     e.preventDefault();
-    if (e.target.value == "Ferrari") setQueryProduct(Ferrari);
-    if (e.target.value == "Porsche") setQueryProduct(Porsche);
-    if (e.target.value == "Mustang") setQueryProduct(Mustang);
+    if (e.target.value == "Cars") setQueryProduct(Cars);
+    // if (e.target.value == "Porsche") setQueryProduct(Porsche);
+    // if (e.target.value == "Mustang") setQueryProduct(Mustang);
+    if (e.target.value == "Watches") setQueryProduct(Watches)
+    if(e.target.value== "Electronics") setQueryProduct(Electronics)
     if (e.target.value.length<=0) setQueryProduct((e)=>e.preventDefault(window.location.reload()))
   }
  
@@ -52,12 +60,13 @@ const Product = () => {
      <main className="block col-2">
        <h2 className="AllProd"> All Products</h2>
        <div>
-            <label>Search Our Exotic Cars! </label>
+            <label>Search Our Exotic Products </label>
             <input list="car-list" type="text" onChange={handleSelectChange}/>
               <datalist id="car-list">
-                <option value="Ferrari"/>
-                  <option value="Mustang"/>
-              <option value="Porsche" />
+                <option value="Cars"/>
+                  
+           <option value="Watches" />
+           <option value="Electronics"/>
              
               
          </datalist>
