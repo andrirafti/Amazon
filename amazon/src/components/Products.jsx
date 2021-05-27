@@ -20,6 +20,7 @@ export default function Products2(props) {
       
         <div>${val.price}</div>
       <p >{val.description}</p>
+       
       
       <div>
           <button className="reviewBTN"onClick={() => onAdd(val)}>Add to cart</button>

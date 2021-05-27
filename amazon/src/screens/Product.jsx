@@ -81,7 +81,8 @@ const Product = () => {
         <Products2
           picture={val.picture}
           name={val.name}
-          price={val.price}
+                price={val.price}
+               
         />
         
         <button className="reviewBTN">
