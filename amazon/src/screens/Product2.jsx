@@ -30,6 +30,7 @@ let Watches = queryProduct2.map(val => val).filter(val => val.name.includes("Rol
 let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
   function handlePageReset(e) {
     e.preventDefault();
+   history.push("/")
   }
   // handle select for our select options//
   function handleSelectChange(e) {
