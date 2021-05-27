@@ -86,7 +86,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
           </select>
         </label>
 <label>Sort By:</label>
-        <input list="car-list" type="text" onChange={handleSelectChange}/>
+        <input style={{"border-raidus":"10px"}} list="car-list" type="text" onChange={handleSelectChange}/>
               <datalist id="car-list">
                 <option value="Cars"/>
                   
