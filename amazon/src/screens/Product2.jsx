@@ -32,7 +32,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
     e.preventDefault();
     if(e.target.value=="reset") setQueryProduct2(queryProduct2.map(val=>val))
    
-   history.push("/")
+  
   }
   // handle select for our select options//
   function handleSelectChange(e) {
