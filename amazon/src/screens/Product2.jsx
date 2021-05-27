@@ -32,7 +32,6 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
   // handle select for our select options//
   function handleSelectChange(e) {
     e.preventDefault();
-    if (e.target.value=="Reset")  history.push("/")
     if (e.target.value == "LowPrice") setQueryProduct2(LowHigh);
     if (e.target.value == "HighPrice") setQueryProduct2(HighLow);
     if (e.target.value == "Cars") setQueryProduct2(Cars)
@@ -40,7 +39,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
     // if (e.target.value == "Mustang") setQueryProduct(Mustang);
     if (e.target.value == "Watches") setQueryProduct2(Watches)
     if(e.target.value== "Electronics") setQueryProduct2(Electronics)
-    if (e.target.value.length<=0) setQueryProduct2((e)=>e.preventDefault(window.location.reload()))
+    if (e.target.value.length<=0) setQueryProduct2(queryProduct2.map(val => val))
     
   }
   
@@ -100,10 +99,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
              
               
         </datalist>
-        
-
-          <button onSubmit={handleSelectChange} value="Reset">More Categories</button>
-    
+            
           
          
     
