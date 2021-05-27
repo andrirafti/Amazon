@@ -28,15 +28,11 @@ let Cars = queryProduct2.map(val => val).filter((val) => val.price>40000);
 // let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
 let Watches = queryProduct2.map(val => val).filter(val => val.name.includes("Rolex"))
 let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
-  function handlePageReset(e) {
-    e.preventDefault();
-    if(e.target.value=="reset") queryProduct2.map(val=>val)
-   
   
-  }
   // handle select for our select options//
   function handleSelectChange(e) {
     e.preventDefault();
+    if (e.target.value=="Reset")  history.push("/")
     if (e.target.value == "LowPrice") setQueryProduct2(LowHigh);
     if (e.target.value == "HighPrice") setQueryProduct2(HighLow);
     if (e.target.value == "Cars") setQueryProduct2(Cars)
@@ -104,11 +100,11 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
              
               
         </datalist>
-        <div>
+        
 
-          <button onSubmit={handlePageReset} value="reset">More Categories</button>
+          <button onSubmit={handleSelectChange} value="Reset">More Categories</button>
     
-          </div>
+          
          
     
          
