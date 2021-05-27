@@ -30,7 +30,7 @@ let Watches = queryProduct2.map(val => val).filter(val => val.name.includes("Rol
 let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
   function handlePageReset(e) {
     e.preventDefault();
-    if(e.target.value=="reset") setQueryProduct2(queryProduct2.map(val=>val))
+    if(e.target.value=="reset") queryProduct2.map(val=>val)
    
   
   }
