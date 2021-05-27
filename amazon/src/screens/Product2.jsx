@@ -101,7 +101,11 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
              
               
         </datalist>
-        <button  onClick={handlePageReset}>More Categories</button>
+        <div>
+<form onSubmit={handlePageReset}>
+          <button>More Categories</button>
+          </form>
+          </div>
          
     
          
