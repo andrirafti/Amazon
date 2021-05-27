@@ -28,7 +28,9 @@ let Cars = queryProduct2.map(val => val).filter((val) => val.price>40000);
 // let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
 let Watches = queryProduct2.map(val => val).filter(val => val.name.includes("Rolex"))
 let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
-  function handlePageReset() {
+  function handlePageReset(e) {
+    e.preventDefault();
+    if(e.target.value=="reset") setQueryProduct2(queryProduct2.map(val=>val))
    
    history.push("/")
   }
@@ -103,9 +105,9 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
               
         </datalist>
         <div>
-<form onSubmit={handlePageReset}>
-          <button>More Categories</button>
-          </form>
+
+          <button onSubmit={handlePageReset} value="reset">More Categories</button>
+    
           </div>
          
     
