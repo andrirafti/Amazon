@@ -56,7 +56,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
       
     };
     fetchProducts();
-  }, [handlePageReset])
+  }, [])
 //search filter//
   const filterCategory = queryProduct2.filter((val) => {
     
