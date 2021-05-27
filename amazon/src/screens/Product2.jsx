@@ -39,7 +39,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
     // if (e.target.value == "Mustang") setQueryProduct(Mustang);
     if (e.target.value == "Watches") setQueryProduct2(Watches)
     if(e.target.value== "Electronics") setQueryProduct2(Electronics)
-    if (e.target.value.length<=0) setQueryProduct2(queryProduct2.map(val => val))
+    if (e.target.value.length<=0) setQueryProduct2(HighLow)
     
   }
   
