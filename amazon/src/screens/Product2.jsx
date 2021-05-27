@@ -106,7 +106,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
           
     <div className="rowSide">
     
-          <input className="search" placeholder="search" type="text" style={{"max-width":"90%"}} value={search} onChange={(e) => setSearch(e.target.value)}/>
+          <input className="search" placeholder="search" type="text" style={{"width":"70%"}} value={search} onChange={(e) => setSearch(e.target.value)}/>
             
     
     
