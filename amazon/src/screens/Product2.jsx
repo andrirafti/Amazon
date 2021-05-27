@@ -28,8 +28,8 @@ let Cars = queryProduct2.map(val => val).filter((val) => val.price>40000);
 // let Mustang = queryProduct.map(val => val).filter((val) => val.name.includes("Mustang"));
 let Watches = queryProduct2.map(val => val).filter(val => val.name.includes("Rolex"))
 let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
-  function handlePageReset(e) {
-    e.preventDefault();
+  function handlePageReset() {
+   
    history.push("/")
   }
   // handle select for our select options//
