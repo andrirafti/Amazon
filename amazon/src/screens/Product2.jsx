@@ -14,11 +14,7 @@ const Product2 = (props) => {
   const [search,setSearch]=useState("")
   const {isAuthenticated} =useAuth0()
   const history=useHistory()
-  const { onAdd } = props
-  const fetchItems = async () => {
-    const AllProducts = await getAllProducts();
-    setQueryProduct2(AllProducts)
-  }
+  const {onAdd}=props
   
 
   //Sort for price High to low//
@@ -30,7 +26,7 @@ const Product2 = (props) => {
 let Cars = queryProduct2.map(val => val).filter((val) => val.price>40000);
 let Watches = queryProduct2.map(val => val).filter(val => val.name.includes("Rolex"))
 let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
- 
+  
   // handle select for our select options//
   function handleSelectChange(e) {
     e.preventDefault();
@@ -39,7 +35,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
     if (e.target.value == "Cars") setQueryProduct2(Cars)
     if (e.target.value == "Watches") setQueryProduct2(Watches)
     if(e.target.value== "Electronics") setQueryProduct2(Electronics)
-    if (e.target.value.length<=0) setQueryProduct2(fetchItems)
+    if (e.target.value.length<=0) window.location.reload()
     
   }
   
@@ -55,7 +51,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
       
     };
     fetchProducts();
-  }, [])
+  }, [handleSelectChange])
 //search filter//
   const filterCategory = queryProduct2.filter((val) => {
     
