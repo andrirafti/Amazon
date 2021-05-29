@@ -35,7 +35,7 @@ let Electronics = queryProduct2.map(val => val).filter(val=>val.price<500)
     if (e.target.value == "Cars") setQueryProduct2(Cars)
     if (e.target.value == "Watches") setQueryProduct2(Watches)
     if(e.target.value== "Electronics") setQueryProduct2(Electronics)
-    if (e.target.value.length<=0) window.location.reload()
+    if (e.target.value.length <= 0) { history.push(`/`) }
     
   }
   
